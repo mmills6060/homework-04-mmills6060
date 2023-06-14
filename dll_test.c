@@ -367,55 +367,6 @@ int unitTest19(int status)
     free_dll(myDLL);
 }
 
-// Test dll_insert 1
-int unitTest20(int status)
-{
-    dll_t *myDLL = create_dll();
-
-    // Populate the DLL with some nodes
-    dll_push_back(myDLL, 1);
-    dll_push_back(myDLL, 3);
-
-    // Perform dll_insert and check the result
-    dll_insert(myDLL, 1, 2);
-
-    // Perform additional tests or assertions
-    // Example: Check if the size of the DLL is correct
-    int size = dll_size(myDLL);
-    if (size == 3) {
-        printf("dll_insert test passed.\n");
-    } else {
-        printf("dll_insert test failed.\n");
-    }
-
-    // Free DLL after testing
-    free_dll(myDLL);
-}
-
-// Test dll_insert 2
-int unitTest21(int status)
-{
-    dll_t *myDLL = create_dll();
-
-    // Populate the DLL with some nodes
-    dll_push_back(myDLL, 1);
-    dll_push_back(myDLL, 3);
-
-    // Perform dll_insert and check the result
-    dll_insert(myDLL, 1, 2);
-
-    // Perform additional tests or assertions
-    // Example: Check if the inserted node has the correct value
-    int value = dll_get(myDLL, 1);
-    if (value == 2) {
-        printf("dll_insert test passed.\n");
-    } else {
-        printf("dll_insert test failed.\n");
-    }
-
-    // Free DLL after testing
-    free_dll(myDLL);
-}
 
 // Test dll_get 1
 int unitTest22(int status)
@@ -460,6 +411,55 @@ int unitTest23(int status)
         printf("dll_get test passed.\n");
     } else {
         printf("dll_get test failed.\n");
+    }
+
+    // Free DLL after testing
+    free_dll(myDLL);
+}
+// Test dll_insert 1
+int unitTest20(int status)
+{
+    dll_t *myDLL = create_dll();
+
+    // Populate the DLL with some nodes
+    dll_push_back(myDLL, 1);
+    dll_push_back(myDLL, 3);
+
+    // Perform dll_insert and check the result
+    dll_insert(myDLL, 1, 2);
+
+    // Perform additional tests or assertions
+    // Example: Check if the size of the DLL is correct
+    int size = dll_size(myDLL);
+    if (size == 3) {
+        printf("dll_insert test passed.\n");
+    } else {
+        printf("dll_insert test failed.\n");
+    }
+
+    // Free DLL after testing
+    free_dll(myDLL);
+}
+
+// Test dll_insert 2
+int unitTest21(int status)
+{
+    dll_t *myDLL = create_dll();
+
+    // Populate the DLL with some nodes
+    dll_push_back(myDLL, 1);
+    dll_push_back(myDLL, 3);
+
+    // Perform dll_insert and check the result
+    dll_insert(myDLL, 1, 2);
+
+    // Perform additional tests or assertions
+    // Example: Check if the inserted node has the correct value
+    int value = dll_get(myDLL, 1);
+    if (value == 2) {
+        printf("dll_insert test passed.\n");
+    } else {
+        printf("dll_insert test failed.\n");
     }
 
     // Free DLL after testing
@@ -714,10 +714,10 @@ int (*unitTests[])(int) = {
     unitTest17,
     unitTest18,
     unitTest19,
-    unitTest20,
-    unitTest21,
     unitTest22,
     unitTest23,
+    unitTest20,
+    unitTest21,
     unitTest24,
     unitTest25,
     unitTest26,

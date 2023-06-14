@@ -416,6 +416,54 @@ int unitTest23(int status)
     // Free DLL after testing
     free_dll(myDLL);
 }
+// Test dll_get 1
+int unitTest99(int status)
+{
+    dll_t *myDLL = create_dll();
+
+    // Populate the DLL with some nodes
+    dll_push_back(myDLL, 1);
+    dll_push_back(myDLL, 2);
+    dll_push_back(myDLL, 3);
+
+    // Perform dll_get and check the result
+    int value = dll_get(myDLL, 1);
+
+    // Perform additional tests or assertions
+    if (value == 2) {
+        printf("dll_get test passed.\n");
+    } else {
+        printf("dll_get test failed.\n");
+    }
+
+    // Free DLL after testing
+    free_dll(myDLL);
+}
+
+// Test dll_get 2
+int unitTest98(int status)
+{
+    dll_t *myDLL = create_dll();
+
+    // Populate the DLL with some nodes
+    dll_push_back(myDLL, 1);
+    dll_push_back(myDLL, 2);
+    dll_push_back(myDLL, 3);
+
+    // Perform dll_get and check the result
+    int value = dll_get(myDLL, 1);
+
+    // Perform additional tests or assertions
+    // Example: Check if the value at the specified index is correct
+    if (value == 2) {
+        printf("dll_get test passed.\n");
+    } else {
+        printf("dll_get test failed.\n");
+    }
+
+    // Free DLL after testing
+    free_dll(myDLL);
+}
 // Test dll_insert 1
 int unitTest20(int status)
 {
@@ -682,8 +730,6 @@ int unitTest34(int status)
     dll_remove(myDLL, 4);   // Remove node at position 4
     dll_remove(myDLL, 0);   // Remove node at position 0
 
-    // Perform assertions or additional tests based on your requirements
-    // ...
 
     // Free DLL after testing
     free_dll(myDLL);
@@ -729,6 +775,8 @@ int (*unitTests[])(int) = {
     unitTest32,
     unitTest33,
     unitTest34,
+    unitTest99,
+    unitTest98,
     NULL};
 
 // ====================================================

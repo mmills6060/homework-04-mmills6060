@@ -416,7 +416,7 @@ int unitTest22(int status)
     int value = dll_get(myDLL, 1);
 
     // Perform additional tests or assertions
-    if (value == 1 ) {
+    if (value == 2 ) {
         printf("dll_get test passed.\n");
         passed = 1;
     } else {
@@ -426,6 +426,7 @@ int unitTest22(int status)
 
     // Free DLL after testing
     free_dll(myDLL);
+    return passed;
 }
 
 // Test dll_get 2
@@ -438,13 +439,14 @@ int unitTest23(int status)
     dll_push_back(myDLL, 1);
     dll_push_back(myDLL, 2);
     dll_push_back(myDLL, 3);
+    dll_push_back(myDLL, 4);
 
     // Perform dll_get and check the result
     int value = dll_get(myDLL, 1);
 
     // Perform additional tests or assertions
     // Example: Check if the value at the specified index is correct
-    if (value == 1) {
+    if (value == 2) {
         printf("dll_get test passed.\n");
         passed = 1;
     } else {
@@ -454,6 +456,7 @@ int unitTest23(int status)
 
     // Free DLL after testing
     free_dll(myDLL);
+    return passed;
 }
 // Test dll_get 1
 int unitTest99(int status)
@@ -467,10 +470,10 @@ int unitTest99(int status)
     dll_push_back(myDLL, 3);
 
     // Perform dll_get and check the result
-    int value = dll_get(myDLL, 1);
+    int value = dll_get(myDLL, 2);
 
     // Perform additional tests or assertions
-    if (value == 1) {
+    if (value == 3) {
         printf("dll_get test passed.\n");
         passed = 1;
     } else {
@@ -480,6 +483,7 @@ int unitTest99(int status)
 
     // Free DLL after testing
     free_dll(myDLL);
+    return passed;
 }
 
 // Test dll_get 2
@@ -511,6 +515,7 @@ int unitTest98(int status)
 
     // Free DLL after testing
     free_dll(myDLL);
+    return passed;
 }
 // Test dll_insert 1
 int unitTest20(int status)
@@ -538,6 +543,7 @@ int unitTest20(int status)
 
     // Free DLL after testing
     free_dll(myDLL);
+    return passed;
 }
 
 // Test dll_insert 2

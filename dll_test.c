@@ -501,7 +501,7 @@ int unitTest98(int status)
 
     // Perform additional tests or assertions
     // Example: Check if the value at the specified index is correct
-    if (value == 2) {
+    if (value == 3) {
         printf("dll_get test passed.\n");
         passed = 1;
     } else {

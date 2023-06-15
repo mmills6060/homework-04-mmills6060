@@ -838,6 +838,8 @@ int (*unitTests[])(int) = {
     unitTest19,
     unitTest22,
     unitTest23,
+    unitTest99,
+    unitTest98,
     unitTest20,
     unitTest21,
     unitTest24,
@@ -851,8 +853,6 @@ int (*unitTests[])(int) = {
     unitTest32,
     unitTest33,
     unitTest34,
-    unitTest99,
-    unitTest98,
     NULL};
 
 // ====================================================

@@ -14,6 +14,7 @@
 #ifndef MYDLL_H
 #define MYDLL_H
 
+#include <stdio.h>
 #include <stdlib.h>
 
 // Create a node data structure to store data within

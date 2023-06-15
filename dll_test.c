@@ -810,7 +810,38 @@ int unitTest34(int status)
     // Free DLL after testing
     free_dll(myDLL);
 }
-
+int unitTest_dll_get()
+{
+    int passed = 0;
+    // Create a new DLL
+    dll_t* dll = create_dll();
+    
+    // Add elements to the DLL
+    dll_push_back(dll, 10);
+    dll_push_back(dll, 20);
+    dll_push_back(dll, 30);
+    dll_push_back(dll, 40);
+    
+    // Test valid positions
+    if (dll_get(dll, 0) == 10)
+    {
+        passed = 1;
+    }
+    else
+    {
+        passed = 0;
+    }
+    
+    // Test invalid positions
+    assert(dll_get(dll, -1) == -1);
+    assert(dll_get(dll, 4) == -1);
+    
+    // Free the DLL
+    free_dll(dll);
+    
+    printf("dll_get unit test passed!\n");
+    return passed;
+}
 // An array of function pointers to all of the tests
 // that main() can use iterate over them.
 // UNCOMMENT Tests as you are ready to use them
@@ -853,6 +884,7 @@ int (*unitTests[])(int) = {
     unitTest32,
     unitTest33,
     unitTest34,
+    unitTest_dll_get,
     NULL};
 
 // ====================================================

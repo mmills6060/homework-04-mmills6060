@@ -249,8 +249,12 @@ int dll_insert(dll_t* l, int pos, int item) {
 //  * we tried to get past the size of the list
 // Assume no negative numbers in the list or the number zero.
 int dll_get(dll_t* l, int pos) {
-    if (l == NULL || pos < 0 || pos >= l->count) {
-        return -1;  // Invalid parameters
+    if (l == NULL) {
+        return -1;  // Invalid list
+    }
+
+    if (pos < 0 || pos >= l->count) {
+        return 0;  // Failure: Invalid position
     }
 
     node_t* currentNode = l->head;
